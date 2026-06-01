@@ -159,6 +159,9 @@ These were explicit user calls. Don't reverse without asking.
 | `src/content/pages/about.md` | Unlinked legacy About page |
 | `src/assets/images/avatar.png` | Avatar (1500×1500, downscaled by sharp) |
 | `src/assets/icons/socials/` | `mail`, `github`, `linkedin`, `instagram`, `unsplash`, `dribbble`, `globe` |
+| `public/admin/index.html` | Decap CMS admin shell (CDN-loaded) |
+| `public/admin/config.yml` | Decap collections, GitHub backend, media |
+| `netlify.toml` | Netlify build settings (command, publish, Node) |
 | `scripts/import-wp.mjs` | WP-XML → markdown transform |
 | `scripts/clean-shortcodes.mjs` | Strip `[youtube]`, `[audio:]`, `[gallery]` |
 | `scripts/generate-redirects.mjs` | Emit `dist/_redirects` + `vercel.json` |
@@ -185,28 +188,61 @@ These were explicit user calls. Don't reverse without asking.
 
 ## Hosting
 
-Not yet chosen. The build emits everything needed for the three short-
-listed targets:
-- **Netlify** / **Cloudflare Pages**: serve `dist/`, `_redirects` is
-  in place
-- **Vercel**: serve `dist/`, `vercel.json` is at repo root
+**Netlify is the chosen target.** It serves `dist/` and reads the
+generated `dist/_redirects` natively (the 190 legacy WP redirects work
+with zero extra work — no static redirect stubs needed). Build settings
+are pinned in `netlify.toml` at repo root (`pnpm build`, publish `dist`,
+Node `22.12.0`). Connect the repo in the Netlify UI → auto-deploy on
+every push to `main`.
+
+The build still also emits portable configs for the alternatives, so
+switching hosts later is cheap:
+- **Cloudflare Pages**: serve `dist/`, `_redirects` is in place
+- **Vercel**: serve `dist/`, `vercel.json` is at repo root (harmless on
+  Netlify — ignored)
 
 DNS for `antonio.m6i.it` still points to legacy WordPress. Switch only
-after a host is chosen and verified.
+after the Netlify deploy is verified on its `*.netlify.app` URL. Then
+add the custom domain in Netlify and move the DNS record.
+
+## Content management (Decap CMS)
+
+Browser-based editing is wired up via **Decap CMS** (Git-based, no
+server). Admin lives at `/admin/` (two static files in `public/admin/`):
+- `index.html` — loads Decap from CDN (`decap-cms@^3.8.0`), `noindex`
+- `config.yml` — GitHub backend (`magnum/antoniomolinari-astro`, branch
+  `main`), collections `posts` + `pages`, fields mirroring the content
+  schema. Uploaded media → `public/uploads/`, served from `/uploads/`.
+
+Auth is **GitHub OAuth brokered by Netlify** (Netlify Identity is
+deprecated for new sites, so not used). One-time setup, done in the
+dashboards (not in this repo):
+1. GitHub → Developer settings → OAuth Apps → New. Callback URL
+   `https://api.netlify.com/auth/done`. Copy Client ID + Secret.
+2. Netlify → Site configuration → Access control → OAuth → install
+   GitHub provider with those credentials.
+3. Visit `/admin/`, "Login with GitHub".
+
+`publish_mode: editorial_workflow` → each edit opens a PR. Switch to
+`simple` in `config.yml` for direct commits to `main`. Note: Decap
+derives the slug (= filename = URL) from the title — when renaming a
+published post, still add a `redirects.json` entry by hand.
 
 ## Open items / next steps
 
-1. **Pick hosting + flip DNS.** Default recommendation: Cloudflare
-   Pages (matches user's existing infra style; native `_redirects`).
+1. **Flip DNS to Netlify.** Host chosen (Netlify, `netlify.toml` in
+   place). Remaining: connect the repo in the Netlify UI, verify on the
+   `*.netlify.app` URL, then add `antonio.m6i.it` as custom domain and
+   move the DNS record off the legacy WordPress.
 2. **Decide About fate.** Delete `src/content/pages/about.md` + add a
    redirect `/about/ → /`, or leave as-is. Currently orphaned.
 3. **Dead 2007 images.** Three references in `paz.md`,
    `blogday-2007.md`, and one other. Options: Wayback Machine recovery
    (manual), strip them, or accept.
-4. **Add a CMS?** Keystatic was the default proposal in the original
-   brief but isn't installed. Plain markdown editing works fine for a
-   one-person setup; revisit when first non-markdown content type is
-   needed.
+4. **CMS — done.** Decap CMS is installed (see "Content management"
+   above). Keystatic from the original brief was not used. Remaining
+   one-time step: wire the GitHub OAuth app + Netlify OAuth provider so
+   `/admin/` login works.
 5. **Pre-publish checklist for a new post**: drop `<slug>.md` into
    `src/content/posts/`, set `pubDatetime` in ISO format, `description`
    (one sentence), `tags`, optional `crosspostedToSubstack`/

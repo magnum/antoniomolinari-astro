@@ -5,9 +5,9 @@ backend:
   # OAuth is brokered by Netlify (Site configuration → Access control → OAuth).
   # No base_url needed: Decap defaults to Netlify's OAuth endpoint.
 
-# Open a PR per change instead of committing straight to main.
-# Set to "simple" to commit directly to `branch` above.
-publish_mode: editorial_workflow
+# "simple" = commit directly to `branch` (no PR / review step).
+# Set to "editorial_workflow" to open a PR per change instead.
+publish_mode: simple
 
 # Uploaded media lives in public/ and is served from the site root.
 media_folder: "public/uploads"

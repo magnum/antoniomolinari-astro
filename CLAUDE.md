@@ -242,10 +242,11 @@ dashboards (not in this repo):
    GitHub provider with those credentials.
 3. Visit `/admin/`, "Login with GitHub".
 
-`publish_mode: editorial_workflow` → each edit opens a PR. Switch to
-`simple` in `config.yml` for direct commits to `main`. Note: Decap
-derives the slug (= filename = URL) from the title — when renaming a
-published post, still add a `redirects.json` entry by hand.
+`publish_mode: simple` → each save commits directly to `main` (no PR /
+review step), and Netlify auto-deploys. Switch to `editorial_workflow`
+in `config.yml` to open a PR per change instead. Note: Decap derives the
+slug (= filename = URL) from the title — when renaming a published post,
+still add a `redirects.json` entry by hand.
 
 ## Open items / next steps
 

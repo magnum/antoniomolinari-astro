@@ -1,0 +1,23 @@
+---
+title: Leopard semi-nightmare
+pubDatetime: 2007-10-28T08:56:50.000Z
+description: >-
+  Ordinato per prudenza qualche giorno fà, ieri di rientro da RailsToItaly
+  (interessante), accompagnata dalla notte e da un simpatico mal di gola è
+  scattata…
+tags:
+  - uncategorized
+---
+
+Ordinato per prudenza qualche giorno fà, ieri di rientro da [RailsToItaly](http://www.railstoitaly.org/) (interessante), accompagnata dalla notte e da un simpatico mal di gola è scattata l'installazione di Leopard. riporto qui di seguito i problemi che ho sicontrato e come sono stai risolti, perchè alcuni son stati veramente noiosi.
+
+1. Inserito il cd e riavviato per l'installazione, quindi con il boot automatico da cd, la **retroilluminazione del MacBookPro si spegneva irrimediabilmente**... cosa faccio ? installo guardando il monitor contro luce ? C'ho provato ehehe, ma alla fine scattava un altro problema (vedi sotto) e non me la son sentita di andare avanti alla cieca :-) Comunque per risolvere il porblema è bastato riavviare normalmente, tenendo premuto Alt all'avvio e scegliendo il buon vecchio disco con tiger, una volta partito ho riavviato (senza passare dalla procedura di installazione) sempre normalmente, con il cd di installazione semplicemente inserito, ma tenendo premuto il tasto C per avviare automaticamente da cd-rom: e luce fù !
+2. Ho fatto qualche prova tempo addietro (e anche più del consentito :-) con le partizioni, il "resizeVolume" via linea di comando ecc creando partizioni e ridimensionandole, mettendoci dentro tutti i vari sistemi operativi che mi interessava prova su hardware apple: risultato ? avevo 2 partizioni, una normale hfs e una subito dopo formattata in ntfs, utilizzata tramite [MacFuse](http://code.google.com/p/macfuse/); il problema era che durante le primissime fasi dell'installazione di Leopard venivano viste tutte e due le partizioni, ma entrambe recavano il messaggio "**impossibile installare in questa partizione**" la ntfs per ovvie problematiche di formato, ma la HFS+ perchè ? Bha !?! Anche qui risolto, backuppando tutti i dati della partizione ntfs, togliendo quindi ogni partizione strana mezzo con utility disco dell'installazione, lanciando l'assitende Bootcamp dal'ancora presente tiger e utilizando la funzione "ripristina in un unico volume", strano che abbia funzionato, di solito Bootcamp si incacchia non poco con partizioni che non ha fatto lui. Nel caso estremo sarei andato di linea di comando, ma di notte, son d'accordo, è pittoresco e informaticamente "romatico", ma certe cose son pericolose :-)
+3. Dulcis in fundo ? Superato anche il problema partizione (comunque l'operazione di backup l'ho fatta di notte) stamattina, sempre accompagnato dal suddetto mal di gola latente che non mi aveva fatto dormire, mi son svegliato e ho ripreso l'installazione; finita l'installazione dopo 1,5 ore (meglio del previsto, preventivavano 2 ore per l'upgrade, "c'ha messo anche meno" penso tra me e me) si riavvia normalmente, ma taaac ! rimane lo **schermo azzurro** per un bel po' e non se ne va, niente login (anche se è quello di sfondo soliti di macosx, blue screen, vi ricorda qualcosa?); penso tra me e me che sia normale, primo riavvio, dovrà sistemare un po' di cose. No era proprio freezato, e dopo aver capito che non si schiodava da quella situazione (orecchio ovviamente poggiato sul caso del portatile in zona disco per sentire se stava facendo qualcosa), rimedio un computer per casa e collegandomi ad internet scopro che [non sono da solo, anzi](http://www.theregister.co.uk/2007/10/27/leopard_install_problems/)... Ovviamente avevo agganciato ancora il disco esterno che avevo usato come backup, pensando fosse semplicemente quello il problema, riavvio ancora qualche volta tra una prova e l'altra. Alla fine, penso che [quello che suggeriscono qui](http://www.macfixit.com/article.php?story=200710261517596) sia più che sensato, è molto probabilec he qualcosa all'avvio o qualche strano "hook" grafico interrompa il normale avvio. Sarà davvero application Enhancer? Non l'ho mai usato (solo installato), proviamo.. ho eseguito la semplice rimozione da terminal (avviato dall'installazione) di alcuni settaggi [come suggeriscono qui](http://www.macfixit.com/article.php?story=200710261517596), riporto:
+
+> - rm -rf /Library/Preference Panes/Application Enhancer.prefpane
+> - rm -rf /Library/Frameworks/Application Enhancer.framework
+> - rm -rf /System/Library/SystemConfiguration/Application Enhancer.bundle
+> - rm -rf /Library/Preferences/com.unsanity.ape.plist
+
+ed ecco che, riavviando, il tutto si risolve ! Bhe dunque, buona fortuna anche a voi ! :) Mi aspetta il pranzo con i suoceri "et varia", ouch !?!\*#@?^ :-)

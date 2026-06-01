@@ -1,0 +1,954 @@
+{
+  "redirects": [
+    {
+      "source": "/2007/08/31/blogday-2007",
+      "destination": "/posts/blogday-2007",
+      "permanent": true
+    },
+    {
+      "source": "/2007/08/31/di-rails-e-altro",
+      "destination": "/posts/di-rails-e-altro",
+      "permanent": true
+    },
+    {
+      "source": "/2007/08/26/gioia-e-rivoluzione",
+      "destination": "/posts/gioia-e-rivoluzione",
+      "permanent": true
+    },
+    {
+      "source": "/2007/08/27/links-for-2007-08-27",
+      "destination": "/posts/links-for-2007-08-27",
+      "permanent": true
+    },
+    {
+      "source": "/2007/08/28/links-for-2007-08-28",
+      "destination": "/posts/links-for-2007-08-28",
+      "permanent": true
+    },
+    {
+      "source": "/2007/08/29/links-for-2007-08-29",
+      "destination": "/posts/links-for-2007-08-29",
+      "permanent": true
+    },
+    {
+      "source": "/2007/08/30/links-for-2007-08-30",
+      "destination": "/posts/links-for-2007-08-30",
+      "permanent": true
+    },
+    {
+      "source": "/2007/08/31/links-for-2007-08-31",
+      "destination": "/posts/links-for-2007-08-31",
+      "permanent": true
+    },
+    {
+      "source": "/2007/08/29/tornando-a-casa",
+      "destination": "/posts/tornando-a-casa",
+      "permanent": true
+    },
+    {
+      "source": "/2007/08/26/twitter-updates-for-2007-08-26",
+      "destination": "/posts/twitter-updates-for-2007-08-26",
+      "permanent": true
+    },
+    {
+      "source": "/2007/08/27/twitter-updates-for-2007-08-27",
+      "destination": "/posts/twitter-updates-for-2007-08-27",
+      "permanent": true
+    },
+    {
+      "source": "/2007/08/28/twitter-updates-for-2007-08-28",
+      "destination": "/posts/twitter-updates-for-2007-08-28",
+      "permanent": true
+    },
+    {
+      "source": "/2007/08/29/twitter-updates-for-2007-08-29",
+      "destination": "/posts/twitter-updates-for-2007-08-29",
+      "permanent": true
+    },
+    {
+      "source": "/2007/08/30/twitter-updates-for-2007-08-30",
+      "destination": "/posts/twitter-updates-for-2007-08-30",
+      "permanent": true
+    },
+    {
+      "source": "/2007/08/29/why-not-aspnet",
+      "destination": "/posts/why-not-aspnet",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/01/links-for-2007-09-01",
+      "destination": "/posts/links-for-2007-09-01",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/02/links-for-2007-09-02",
+      "destination": "/posts/links-for-2007-09-02",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/03/links-for-2007-09-03",
+      "destination": "/posts/links-for-2007-09-03",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/04/links-for-2007-09-04",
+      "destination": "/posts/links-for-2007-09-04",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/05/links-for-2007-09-05",
+      "destination": "/posts/links-for-2007-09-05",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/06/links-for-2007-09-06",
+      "destination": "/posts/links-for-2007-09-06",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/07/links-for-2007-09-07",
+      "destination": "/posts/links-for-2007-09-07",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/08/links-for-2007-09-08",
+      "destination": "/posts/links-for-2007-09-08",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/11/links-for-2007-09-11",
+      "destination": "/posts/links-for-2007-09-11",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/12/links-for-2007-09-12",
+      "destination": "/posts/links-for-2007-09-12",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/13/links-for-2007-09-13",
+      "destination": "/posts/links-for-2007-09-13",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/18/links-for-2007-09-18",
+      "destination": "/posts/links-for-2007-09-18",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/19/links-for-2007-09-19",
+      "destination": "/posts/links-for-2007-09-19",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/20/links-for-2007-09-20",
+      "destination": "/posts/links-for-2007-09-20",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/22/links-for-2007-09-22",
+      "destination": "/posts/links-for-2007-09-22",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/23/links-for-2007-09-23",
+      "destination": "/posts/links-for-2007-09-23",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/25/links-for-2007-09-25",
+      "destination": "/posts/links-for-2007-09-25",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/26/links-for-2007-09-26",
+      "destination": "/posts/links-for-2007-09-26",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/27/links-for-2007-09-27",
+      "destination": "/posts/links-for-2007-09-27",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/28/links-for-2007-09-28",
+      "destination": "/posts/links-for-2007-09-28",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/29/links-for-2007-09-29",
+      "destination": "/posts/links-for-2007-09-29",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/30/links-for-2007-09-30",
+      "destination": "/posts/links-for-2007-09-30",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/03/paz",
+      "destination": "/posts/paz",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/06/rosso-di-sera",
+      "destination": "/posts/rosso-di-sera",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/10/simulatori-di-guida",
+      "destination": "/posts/simulatori-di-guida",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/21/top-ten-laughably-bad-tech-ads",
+      "destination": "/posts/top-ten-laughably-bad-tech-ads",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/01/twitter-updates-for-2007-09-01",
+      "destination": "/posts/twitter-updates-for-2007-09-01",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/02/twitter-updates-for-2007-09-02",
+      "destination": "/posts/twitter-updates-for-2007-09-02",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/03/twitter-updates-for-2007-09-03",
+      "destination": "/posts/twitter-updates-for-2007-09-03",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/04/twitter-updates-for-2007-09-04",
+      "destination": "/posts/twitter-updates-for-2007-09-04",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/05/twitter-updates-for-2007-09-05",
+      "destination": "/posts/twitter-updates-for-2007-09-05",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/06/twitter-updates-for-2007-09-06",
+      "destination": "/posts/twitter-updates-for-2007-09-06",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/07/twitter-updates-for-2007-09-07",
+      "destination": "/posts/twitter-updates-for-2007-09-07",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/08/twitter-updates-for-2007-09-08",
+      "destination": "/posts/twitter-updates-for-2007-09-08",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/09/twitter-updates-for-2007-09-09",
+      "destination": "/posts/twitter-updates-for-2007-09-09",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/10/twitter-updates-for-2007-09-10",
+      "destination": "/posts/twitter-updates-for-2007-09-10",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/11/twitter-updates-for-2007-09-11",
+      "destination": "/posts/twitter-updates-for-2007-09-11",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/12/twitter-updates-for-2007-09-12",
+      "destination": "/posts/twitter-updates-for-2007-09-12",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/13/twitter-updates-for-2007-09-13",
+      "destination": "/posts/twitter-updates-for-2007-09-13",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/14/twitter-updates-for-2007-09-14",
+      "destination": "/posts/twitter-updates-for-2007-09-14",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/16/twitter-updates-for-2007-09-16",
+      "destination": "/posts/twitter-updates-for-2007-09-16",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/17/twitter-updates-for-2007-09-17",
+      "destination": "/posts/twitter-updates-for-2007-09-17",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/18/twitter-updates-for-2007-09-18",
+      "destination": "/posts/twitter-updates-for-2007-09-18",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/20/twitter-updates-for-2007-09-20",
+      "destination": "/posts/twitter-updates-for-2007-09-20",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/21/twitter-updates-for-2007-09-21",
+      "destination": "/posts/twitter-updates-for-2007-09-21",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/26/twitter-updates-for-2007-09-26",
+      "destination": "/posts/twitter-updates-for-2007-09-26",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/12/v-day-e-linvasione-barbarica-di-grillo",
+      "destination": "/posts/v-day-e-linvasione-barbarica-di-grillo",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/05/ig-nobel",
+      "destination": "/posts/ig-nobel",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/28/leopard-semi-nightmare",
+      "destination": "/posts/leopard-semi-nightmare",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/05/lideologia-sociale-dellautomobile",
+      "destination": "/posts/lideologia-sociale-dellautomobile",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/01/links-for-2007-10-01",
+      "destination": "/posts/links-for-2007-10-01",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/02/links-for-2007-10-02",
+      "destination": "/posts/links-for-2007-10-02",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/03/links-for-2007-10-03",
+      "destination": "/posts/links-for-2007-10-03",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/05/links-for-2007-10-05",
+      "destination": "/posts/links-for-2007-10-05",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/06/links-for-2007-10-06",
+      "destination": "/posts/links-for-2007-10-06",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/10/links-for-2007-10-10",
+      "destination": "/posts/links-for-2007-10-10",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/12/links-for-2007-10-12",
+      "destination": "/posts/links-for-2007-10-12",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/14/links-for-2007-10-14",
+      "destination": "/posts/links-for-2007-10-14",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/16/links-for-2007-10-16",
+      "destination": "/posts/links-for-2007-10-16",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/17/links-for-2007-10-17",
+      "destination": "/posts/links-for-2007-10-17",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/19/links-for-2007-10-19",
+      "destination": "/posts/links-for-2007-10-19",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/20/links-for-2007-10-20",
+      "destination": "/posts/links-for-2007-10-20",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/21/links-for-2007-10-21",
+      "destination": "/posts/links-for-2007-10-21",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/22/links-for-2007-10-22",
+      "destination": "/posts/links-for-2007-10-22",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/23/links-for-2007-10-23",
+      "destination": "/posts/links-for-2007-10-23",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/24/links-for-2007-10-24",
+      "destination": "/posts/links-for-2007-10-24",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/26/links-for-2007-10-26",
+      "destination": "/posts/links-for-2007-10-26",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/29/links-for-2007-10-29",
+      "destination": "/posts/links-for-2007-10-29",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/30/links-for-2007-10-30",
+      "destination": "/posts/links-for-2007-10-30",
+      "permanent": true
+    },
+    {
+      "source": "/2007/09/30/twitter-updates-for-2007-09-30",
+      "destination": "/posts/twitter-updates-for-2007-09-30",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/01/twitter-updates-for-2007-10-01",
+      "destination": "/posts/twitter-updates-for-2007-10-01",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/02/twitter-updates-for-2007-10-02",
+      "destination": "/posts/twitter-updates-for-2007-10-02",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/03/twitter-updates-for-2007-10-03",
+      "destination": "/posts/twitter-updates-for-2007-10-03",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/04/twitter-updates-for-2007-10-04",
+      "destination": "/posts/twitter-updates-for-2007-10-04",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/07/twitter-updates-for-2007-10-07",
+      "destination": "/posts/twitter-updates-for-2007-10-07",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/10/twitter-updates-for-2007-10-10",
+      "destination": "/posts/twitter-updates-for-2007-10-10",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/12/twitter-updates-for-2007-10-12",
+      "destination": "/posts/twitter-updates-for-2007-10-12",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/16/twitter-updates-for-2007-10-16",
+      "destination": "/posts/twitter-updates-for-2007-10-16",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/17/twitter-updates-for-2007-10-17",
+      "destination": "/posts/twitter-updates-for-2007-10-17",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/18/twitter-updates-for-2007-10-18",
+      "destination": "/posts/twitter-updates-for-2007-10-18",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/19/twitter-updates-for-2007-10-19",
+      "destination": "/posts/twitter-updates-for-2007-10-19",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/23/twitter-updates-for-2007-10-23",
+      "destination": "/posts/twitter-updates-for-2007-10-23",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/24/twitter-updates-for-2007-10-24",
+      "destination": "/posts/twitter-updates-for-2007-10-24",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/25/twitter-updates-for-2007-10-25",
+      "destination": "/posts/twitter-updates-for-2007-10-25",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/26/twitter-updates-for-2007-10-26",
+      "destination": "/posts/twitter-updates-for-2007-10-26",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/29/twitter-updates-for-2007-10-29",
+      "destination": "/posts/twitter-updates-for-2007-10-29",
+      "permanent": true
+    },
+    {
+      "source": "/2007/10/31/twitter-updates-for-2007-10-31",
+      "destination": "/posts/twitter-updates-for-2007-10-31",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/08/gli-occhi-nel-buio",
+      "destination": "/posts/gli-occhi-nel-buio",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/01/links-for-2007-11-01",
+      "destination": "/posts/links-for-2007-11-01",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/02/links-for-2007-11-02",
+      "destination": "/posts/links-for-2007-11-02",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/05/links-for-2007-11-05",
+      "destination": "/posts/links-for-2007-11-05",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/06/links-for-2007-11-06",
+      "destination": "/posts/links-for-2007-11-06",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/07/links-for-2007-11-07",
+      "destination": "/posts/links-for-2007-11-07",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/08/links-for-2007-11-08",
+      "destination": "/posts/links-for-2007-11-08",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/09/links-for-2007-11-09",
+      "destination": "/posts/links-for-2007-11-09",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/10/links-for-2007-11-10",
+      "destination": "/posts/links-for-2007-11-10",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/11/links-for-2007-11-11",
+      "destination": "/posts/links-for-2007-11-11",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/12/links-for-2007-11-12",
+      "destination": "/posts/links-for-2007-11-12",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/13/links-for-2007-11-13",
+      "destination": "/posts/links-for-2007-11-13",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/14/links-for-2007-11-14",
+      "destination": "/posts/links-for-2007-11-14",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/15/links-for-2007-11-15",
+      "destination": "/posts/links-for-2007-11-15",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/16/links-for-2007-11-16",
+      "destination": "/posts/links-for-2007-11-16",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/18/links-for-2007-11-18",
+      "destination": "/posts/links-for-2007-11-18",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/20/links-for-2007-11-20",
+      "destination": "/posts/links-for-2007-11-20",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/21/links-for-2007-11-21",
+      "destination": "/posts/links-for-2007-11-21",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/22/links-for-2007-11-22",
+      "destination": "/posts/links-for-2007-11-22",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/25/links-for-2007-11-25",
+      "destination": "/posts/links-for-2007-11-25",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/26/links-for-2007-11-26",
+      "destination": "/posts/links-for-2007-11-26",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/27/links-for-2007-11-27",
+      "destination": "/posts/links-for-2007-11-27",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/28/links-for-2007-11-28",
+      "destination": "/posts/links-for-2007-11-28",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/30/links-for-2007-11-30",
+      "destination": "/posts/links-for-2007-11-30",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/11/pleixnet",
+      "destination": "/posts/pleixnet",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/25/the-whitest-boy-alive-golden-cage",
+      "destination": "/posts/the-whitest-boy-alive-golden-cage",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/05/twitter-updates-for-2007-11-05",
+      "destination": "/posts/twitter-updates-for-2007-11-05",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/06/twitter-updates-for-2007-11-06",
+      "destination": "/posts/twitter-updates-for-2007-11-06",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/08/twitter-updates-for-2007-11-08",
+      "destination": "/posts/twitter-updates-for-2007-11-08",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/09/twitter-updates-for-2007-11-09",
+      "destination": "/posts/twitter-updates-for-2007-11-09",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/10/twitter-updates-for-2007-11-10",
+      "destination": "/posts/twitter-updates-for-2007-11-10",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/12/twitter-updates-for-2007-11-12",
+      "destination": "/posts/twitter-updates-for-2007-11-12",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/13/twitter-updates-for-2007-11-13",
+      "destination": "/posts/twitter-updates-for-2007-11-13",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/14/twitter-updates-for-2007-11-14",
+      "destination": "/posts/twitter-updates-for-2007-11-14",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/15/twitter-updates-for-2007-11-15",
+      "destination": "/posts/twitter-updates-for-2007-11-15",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/20/twitter-updates-for-2007-11-20",
+      "destination": "/posts/twitter-updates-for-2007-11-20",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/21/twitter-updates-for-2007-11-21",
+      "destination": "/posts/twitter-updates-for-2007-11-21",
+      "permanent": true
+    },
+    {
+      "source": "/2007/11/29/twitter-updates-for-2007-11-29",
+      "destination": "/posts/twitter-updates-for-2007-11-29",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/21/boocamp-vs-parallels-vs-fusion",
+      "destination": "/posts/boocamp-vs-parallels-vs-fusion",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/04/fiat-500-blueme",
+      "destination": "/posts/fiat-500-blueme",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/02/links-for-2007-12-02",
+      "destination": "/posts/links-for-2007-12-02",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/04/links-for-2007-12-04",
+      "destination": "/posts/links-for-2007-12-04",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/05/links-for-2007-12-05",
+      "destination": "/posts/links-for-2007-12-05",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/06/links-for-2007-12-06",
+      "destination": "/posts/links-for-2007-12-06",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/07/links-for-2007-12-07",
+      "destination": "/posts/links-for-2007-12-07",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/08/links-for-2007-12-08",
+      "destination": "/posts/links-for-2007-12-08",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/09/links-for-2007-12-09",
+      "destination": "/posts/links-for-2007-12-09",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/10/links-for-2007-12-10",
+      "destination": "/posts/links-for-2007-12-10",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/11/links-for-2007-12-11",
+      "destination": "/posts/links-for-2007-12-11",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/13/links-for-2007-12-13",
+      "destination": "/posts/links-for-2007-12-13",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/14/links-for-2007-12-14",
+      "destination": "/posts/links-for-2007-12-14",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/17/links-for-2007-12-17",
+      "destination": "/posts/links-for-2007-12-17",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/18/links-for-2007-12-18",
+      "destination": "/posts/links-for-2007-12-18",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/19/links-for-2007-12-19",
+      "destination": "/posts/links-for-2007-12-19",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/21/links-for-2007-12-21",
+      "destination": "/posts/links-for-2007-12-21",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/22/links-for-2007-12-22",
+      "destination": "/posts/links-for-2007-12-22",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/23/links-for-2007-12-23",
+      "destination": "/posts/links-for-2007-12-23",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/27/links-for-2007-12-27",
+      "destination": "/posts/links-for-2007-12-27",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/28/links-for-2007-12-28",
+      "destination": "/posts/links-for-2007-12-28",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/03/twitter-updates-for-2007-12-03",
+      "destination": "/posts/twitter-updates-for-2007-12-03",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/07/twitter-updates-for-2007-12-07",
+      "destination": "/posts/twitter-updates-for-2007-12-07",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/17/twitter-updates-for-2007-12-17",
+      "destination": "/posts/twitter-updates-for-2007-12-17",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/24/twitter-updates-for-2007-12-24",
+      "destination": "/posts/twitter-updates-for-2007-12-24",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/28/twitter-updates-for-2007-12-28",
+      "destination": "/posts/twitter-updates-for-2007-12-28",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/29/twitter-updates-for-2007-12-29",
+      "destination": "/posts/twitter-updates-for-2007-12-29",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/30/twitter-updates-for-2007-12-30",
+      "destination": "/posts/twitter-updates-for-2007-12-30",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/31/twitter-updates-for-2007-12-31",
+      "destination": "/posts/twitter-updates-for-2007-12-31",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/06/videovintage-diego-abatantuono-gnellocianni-agnello",
+      "destination": "/posts/videovintage-diego-abatantuono-gnellocianni-agnello",
+      "permanent": true
+    },
+    {
+      "source": "/2007/12/02/videovintage-porca-miseria-che-pettinata",
+      "destination": "/posts/videovintage-porca-miseria-che-pettinata",
+      "permanent": true
+    },
+    {
+      "source": "/2008/01/01/twitter-updates-for-2008-01-01",
+      "destination": "/posts/twitter-updates-for-2008-01-01",
+      "permanent": true
+    },
+    {
+      "source": "/2008/01/09/twitter-updates-for-2008-01-09",
+      "destination": "/posts/twitter-updates-for-2008-01-09",
+      "permanent": true
+    },
+    {
+      "source": "/2008/01/10/twitter-updates-for-2008-01-10",
+      "destination": "/posts/twitter-updates-for-2008-01-10",
+      "permanent": true
+    },
+    {
+      "source": "/2008/01/11/twitter-updates-for-2008-01-11",
+      "destination": "/posts/twitter-updates-for-2008-01-11",
+      "permanent": true
+    },
+    {
+      "source": "/2008/04/22/twitter-updates-for-2008-04-22",
+      "destination": "/posts/twitter-updates-for-2008-04-22",
+      "permanent": true
+    },
+    {
+      "source": "/2008/05/29/links-for-2008-05-29",
+      "destination": "/posts/links-for-2008-05-29",
+      "permanent": true
+    },
+    {
+      "source": "/2008/05/30/links-for-2008-05-30",
+      "destination": "/posts/links-for-2008-05-30",
+      "permanent": true
+    },
+    {
+      "source": "/2008/05/12/twitter-updates-for-2008-05-12",
+      "destination": "/posts/twitter-updates-for-2008-05-12",
+      "permanent": true
+    },
+    {
+      "source": "/2008/05/27/twitter-updates-for-2008-05-27",
+      "destination": "/posts/twitter-updates-for-2008-05-27",
+      "permanent": true
+    },
+    {
+      "source": "/2008/05/28/twitter-updates-for-2008-05-28",
+      "destination": "/posts/twitter-updates-for-2008-05-28",
+      "permanent": true
+    },
+    {
+      "source": "/2008/06/03/links-for-2008-06-03",
+      "destination": "/posts/links-for-2008-06-03",
+      "permanent": true
+    },
+    {
+      "source": "/2008/06/05/links-for-2008-06-05",
+      "destination": "/posts/links-for-2008-06-05",
+      "permanent": true
+    },
+    {
+      "source": "/2008/06/06/links-for-2008-06-06",
+      "destination": "/posts/links-for-2008-06-06",
+      "permanent": true
+    },
+    {
+      "source": "/2008/06/07/links-for-2008-06-07",
+      "destination": "/posts/links-for-2008-06-07",
+      "permanent": true
+    },
+    {
+      "source": "/2014/10/14/hello-world",
+      "destination": "/posts/hello-world",
+      "permanent": true
+    },
+    {
+      "source": "/2014/12/10/what-are-the-gems-every-ruby-on-rails-developer-should-know-2",
+      "destination": "/posts/what-are-the-gems-every-ruby-on-rails-developer-should-know-2",
+      "permanent": true
+    },
+    {
+      "source": "/2026/05/17/three-cameras-five-hours-and-a-number-called-mtu",
+      "destination": "/posts/three-cameras-five-hours-and-a-number-called-mtu",
+      "permanent": true
+    },
+    {
+      "source": "",
+      "destination": "/posts/iphone-clones",
+      "permanent": true
+    },
+    {
+      "source": "",
+      "destination": "/posts/sngr-an-afternoon-in-product-mode",
+      "permanent": true
+    }
+  ]
+}

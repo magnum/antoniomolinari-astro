@@ -24,4 +24,4 @@ In the past **25 years and more** I collaborated with various agencies and worke
 
 For full portfolio, visit my studio at <http://www.incode.it> or ask :-)
 
-My **resume** is available at [this link](https://docs.google.com/document/d/1zAjYVGjGfPNKLzoo5UkYiG5BqNI_of1aLyQGxmn9Gvw/edit?usp=sharing).
+My **resume** is publicly available at [this link](https://docs.google.com/document/d/1zAjYVGjGfPNKLzoo5UkYiG5BqNI_of1aLyQGxmn9Gvw/edit?usp=sharing).

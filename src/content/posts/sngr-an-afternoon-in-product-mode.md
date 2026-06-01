@@ -1,12 +1,11 @@
 ---
 title: Sngr an afternoon in product mode
 pubDatetime: 2026-05-23T21:28:41.000Z
-description: >-
-  I had an idea on a Saturday morning. A small one — the kind that would
-  normally sit in a notes app for six months and then quietly die. I wanted a…
-tags:
-  - uncategorized
-draft: true
+description: I had an idea on a Saturday morning. A small one — the kind that
+  would normally sit in a notes app for six months and then quietly die. I
+  wanted a…
+tags: []
+draft: false
 ---
 
 ## Or: what it feels like to ship a Shazam clone without writing the code yourself

@@ -27,6 +27,21 @@
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
+
+  /* Homepage headline bio: markdown rendered from the CMS, styled to match
+     the original hand-written hero (accent dashed-underline links). */
+  .hero-bio p {
+    @apply mt-4 leading-relaxed;
+  }
+  .hero-bio p:first-child {
+    @apply mt-2;
+  }
+  .hero-bio strong {
+    @apply font-bold;
+  }
+  .hero-bio a {
+    @apply text-accent decoration-dashed underline-offset-4 hover:underline;
+  }
 }
 
 @utility max-w-app {

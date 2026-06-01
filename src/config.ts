@@ -7,6 +7,10 @@
 import userConfig from "@/astro-paper.config";
 import type { ResolvedAstroPaperConfig } from "./types/config";
 import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
+// Socials live in a data file so they can be edited from the CMS (Decap),
+// not in astro-paper.config.ts. Both Socials.astro and the homepage read
+// them through `config.socials` below.
+import socialsData from "@/data/socials.json";
 
 const DEFAULT_OG_IMAGE = "default-og.jpg";
 
@@ -34,7 +38,7 @@ const config: ResolvedAstroPaperConfig = {
     editPost: userConfig.features?.editPost ?? { enabled: false },
     search: userConfig.features?.search ?? "pagefind",
   },
-  socials: userConfig.socials ?? [],
+  socials: (socialsData.socials ?? []) as ResolvedAstroPaperConfig["socials"],
   shareLinks: userConfig.shareLinks ?? [],
 };
 

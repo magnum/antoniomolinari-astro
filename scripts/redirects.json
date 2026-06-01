@@ -1,5 +1,9 @@
 [
   {
+    "from": "/about/",
+    "to": "/"
+  },
+  {
     "from": "/2007/08/31/blogday-2007/",
     "to": "/posts/blogday-2007/"
   },

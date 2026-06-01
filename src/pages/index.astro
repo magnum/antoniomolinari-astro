@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { Image } from "astro:assets";
 import IconRss from "@/assets/icons/IconRss.svg";
@@ -16,6 +16,14 @@ import { useTranslations } from "@/i18n";
 import config from "@/config";
 
 const { socials, posts: postsConfig } = config;
+
+// Headline block (heading + bio + skills) is editable from the CMS.
+const headline = await getEntry("site", "headline");
+if (!headline) {
+  throw new Error("Missing content entry: `headline.md` in `src/content/site/`");
+}
+const { Content: HeadlineBio } = await render(headline);
+const { heading, skills } = headline.data;
 
 const locale = Astro.currentLocale ?? config.site.lang;
 const t = useTranslations(locale);
@@ -46,7 +54,7 @@ const homePath = getRelativeLocaleUrl(locale, "");
       />
       <div class="mt-4 flex items-baseline gap-3">
         <h1 class="my-2 inline-block text-4xl font-bold sm:my-3 sm:text-5xl">
-          Hello!
+          {heading}
         </h1>
         <a
           target="_blank"
@@ -64,45 +72,9 @@ const homePath = getRelativeLocaleUrl(locale, "");
         </a>
       </div>
 
-      <p class="mt-2 leading-relaxed">
-        My name is <strong>Antonio Molinari</strong>, for friends <strong>Magnum</strong>.<br/> I'm a
-        <strong>developer</strong>, specialized in web oriented
-        <strong>software design</strong> and <strong>development</strong>. I
-        use <strong>Ruby/Rails</strong>, <strong>Javascript</strong>,
-        <strong>open-source cms</strong> like WordPress, Drupal. I'm often the
-        technical responsible in projects. I mainly work on backend, sometimes
-        in frontend, crafting UIs and paying attention to UX.
-      </p>
-      <p class="mt-4 leading-relaxed">
-        In the past <strong>25 years and more</strong> I collaborated with
-        various agencies and worked for their clients or directly with Aia,
-        Axa, Bmw, Bnp Paribas, Brancamenta, Cantine Ferrari, Cardif, Deutsch
-        Bank, Disney, Edison, Enel, FIA, Fastweb, Fiat/FCA, Gucci, Il Sole 24
-        ore, ING, Intesa San Paolo, Loro Piana, Mailup/Growens, Manfrotto,
-        Mediaworld, Banca Mediolanum, Nespresso, Nestlè, Negroni, Paypal,
-        Perugina, Philadelfia, Piaggio, Pioneer, Pirelli, Prosciutto di Parma,
-        Rcs, San Carlo, Santander, Saint-Gobain, Sanpellegrino, Santander,
-        Sisal, Sky, Sòl Melià, ST Microelectronics, Tim, Twinings, Unicef,
-        Unicredit, Vodafone and others.
-      </p>
-      <p class="mt-4 leading-relaxed">
-        For full portfolio, visit my studio at <a
-          href="http://www.incode.it"
-          target="_blank"
-          rel="noopener"
-          class="text-accent decoration-dashed underline-offset-4 hover:underline"
-          >http://www.incode.it</a
-        > or ask :-)
-      </p>
-      <p class="mt-4 leading-relaxed">
-        My <strong>resume</strong> is publicly available at <a
-          href="https://docs.google.com/document/d/1zAjYVGjGfPNKLzoo5UkYiG5BqNI_of1aLyQGxmn9Gvw/edit?usp=sharing"
-          target="_blank"
-          rel="noopener"
-          class="text-accent decoration-dashed underline-offset-4 hover:underline"
-          >this link</a
-        >.
-      </p>
+      <div class="hero-bio">
+        <HeadlineBio />
+      </div>
       {
         socials.length > 0 && (
           <div class="mt-4 flex max-sm:flex-col sm:items-center">
@@ -118,21 +90,7 @@ const homePath = getRelativeLocaleUrl(locale, "");
     <section id="skills" class="border-border border-b pt-10 pb-8">
       <h2 class="text-2xl font-semibold tracking-wide">Skills</h2>
       <ul class="mt-4 space-y-1.5 leading-relaxed">
-        <li>Ruby/Rails</li>
-        <li>Php cms oriented, WordPress, Drupal</li>
-        <li>NodeJS, npm/yarn, webpack, express</li>
-        <li>Javascript, Typescript, JAMstack, React, Gatsby, Vue, Angular/Ionic</li>
-        <li>Web Design and Development, HTML, CSS/SASS, front-end frameworks</li>
-        <li>UX and Interface Design, Figma</li>
-        <li>Git, CI, CD</li>
-        <li>MySQL, PostgreSQL, SQLite, MsSQL</li>
-        <li>AWS EC2, LB, IAM, S3, RDS, QLDB, SQS, ElasticEncoding, Amazon Web Services</li>
-        <li>Heroku, metrics, environments and resources management</li>
-        <li>Server management, Docker, DevOps</li>
-        <li>Blockchain, Bitcoin, Ethereum</li>
-        <li>Python/Django</li>
-        <li>Agile methodologies</li>
-        <li>OSX, Linux Ubuntu/Debian/Centos, Windows</li>
+        {skills.map(skill => <li>{skill}</li>)}
       </ul>
     </section>
 

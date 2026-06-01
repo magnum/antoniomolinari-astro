@@ -127,13 +127,25 @@ These were explicit user calls. Don't reverse without asking.
   `src/styles/global.css`. No webfonts loaded for body text.
 - **Accent `#01E0B8`** in both light and dark themes
   (`src/styles/theme.css`). Accent-foreground `#00261F`.
-- **About page is not in nav.** The homepage IS the about. The file
-  `src/content/pages/about.md` still exists for legacy `/about/` URLs
-  but is unlinked. TBD: redirect or delete.
-- **Home structure (fixed)**: rounded avatar → "Hello!" + RSS icon → 4
-  paragraphs of bio (English, copied from the legacy WP page) → Skills
-  list (one per line) → "Recent Articles" card list → "All Articles"
-  button. No archive section, no featured posts.
+- **No About page.** The homepage IS the about. `about.md` and its
+  dedicated route `src/pages/about.astro` were deleted; `/about/` now
+  301-redirects to `/` (entry in `redirects.json`). The unused
+  `pages` content collection still exists in `content.config.ts` but
+  has no entries and no route — harmless, left for future use.
+- **Home structure (fixed)**: rounded avatar → headline heading +
+  RSS icon → bio (markdown) → social links → Skills list (one per
+  line) → "Recent Articles" card list → "All Articles" button. No
+  archive section, no featured posts. The heading, bio, and skills are
+  the **Headline block**, editable from the CMS — see "Content
+  management". The hero bio markdown is styled by `.hero-bio` in
+  `global.css` (accent dashed-underline links) to match the original
+  hand-written hero; external links there open in the same tab (the old
+  hardcoded `target="_blank"` was dropped when it became markdown).
+- **Socials are a shared component fed by a data file.**
+  `Socials.astro` renders `config.socials`, which `src/config.ts` now
+  loads from `src/data/socials.json` (CMS-editable), NOT from
+  `astro-paper.config.ts`. The same component is reused in the homepage
+  hero and the footer.
 - **Single source of truth for cross-posts.** A Substack-mirrored
   article lives only in `posts/` as a regular post with the boolean
   flag + URL.
@@ -143,12 +155,14 @@ These were explicit user calls. Don't reverse without asking.
 
 | File | Purpose |
 |------|---------|
-| `astro-paper.config.ts` | Site title, locale `en`, socials list, share links |
+| `astro-paper.config.ts` | Site title, locale `en`, share links (NOT socials — those live in `src/data/socials.json`) |
 | `astro.config.ts` | i18n locales (`["en"]`), Markdown/Shiki config |
 | `src/styles/theme.css` | Accent colour, light/dark CSS variables |
 | `src/styles/global.css` | `--font-sans` system stack, base layer |
 | `src/i18n/lang/en.ts` | "Articles" / "Recent Articles" / "Archive" labels |
-| `src/pages/index.astro` | Custom hero with avatar, bio, skills, recent |
+| `src/pages/index.astro` | Hero: avatar + CMS Headline (heading/bio/skills) + socials + recent |
+| `src/content/site/headline.md` | Headline block: heading, skills, bio body (CMS-editable) |
+| `src/data/socials.json` | Social links list (CMS-editable, read by `src/config.ts`) |
 | `src/components/Header.astro` | Nav (no About link), theme toggle |
 | `src/components/Socials.astro` | Falls back to `globe.svg` if named icon missing |
 | `src/components/Card.astro` | No Substack badge, no `transition:name` |
@@ -156,16 +170,15 @@ These were explicit user calls. Don't reverse without asking.
 | `src/pages/posts/[...slug]/index.astro` | "Also published on Substack" banner |
 | `src/content.config.ts` | Content collection schemas |
 | `src/content/posts/` | All 190 imported posts, flat, slug = filename |
-| `src/content/pages/about.md` | Unlinked legacy About page |
 | `src/assets/images/avatar.png` | Avatar (1500×1500, downscaled by sharp) |
-| `src/assets/icons/socials/` | `mail`, `github`, `linkedin`, `instagram`, `unsplash`, `dribbble`, `globe` |
+| `src/assets/icons/socials/` | `mail`, `github`, `linkedin`, `instagram`, `dribbble`, `substack`, `globe` (+ unused `facebook`/`pinterest`/`telegram`/`whatsapp`/`x`). NB: `unsplash.svg` was deleted — the `unsplash` social entry falls back to `globe` |
 | `public/admin/index.html` | Decap CMS admin shell (CDN-loaded) |
 | `public/admin/config.yml` | Decap collections, GitHub backend, media |
 | `netlify.toml` | Netlify build settings (command, publish, Node) |
 | `scripts/import-wp.mjs` | WP-XML → markdown transform |
 | `scripts/clean-shortcodes.mjs` | Strip `[youtube]`, `[audio:]`, `[gallery]` |
 | `scripts/generate-redirects.mjs` | Emit `dist/_redirects` + `vercel.json` |
-| `scripts/redirects.json` | 190 entries `/YYYY/MM/DD/slug/` → `/posts/slug/` (committed) |
+| `scripts/redirects.json` | 191 entries: `/YYYY/MM/DD/slug/` → `/posts/slug/` + `/about/` → `/` (committed) |
 | `import/wp-export.xml` | The WP export — source of truth (committed) |
 
 ## Gotchas
@@ -211,8 +224,14 @@ Browser-based editing is wired up via **Decap CMS** (Git-based, no
 server). Admin lives at `/admin/` (two static files in `public/admin/`):
 - `index.html` — loads Decap from CDN (`decap-cms@^3.8.0`), `noindex`
 - `config.yml` — GitHub backend (`magnum/antoniomolinari-astro`, branch
-  `main`), collections `posts` + `pages`, fields mirroring the content
-  schema. Uploaded media → `public/uploads/`, served from `/uploads/`.
+  `main`). Collections:
+  - **Posts** — `src/content/posts/`, fields mirror the content schema.
+  - **Site blocks** (singleton files):
+    - *Homepage headline* → `src/content/site/headline.md` (heading,
+      bio markdown, skills list).
+    - *Social links* → `src/data/socials.json` (name/url/linkTitle
+      list; `name` must match an SVG in `src/assets/icons/socials/`).
+  Uploaded media → `public/uploads/`, served from `/uploads/`.
 
 Auth is **GitHub OAuth brokered by Netlify** (Netlify Identity is
 deprecated for new sites, so not used). One-time setup, done in the
@@ -234,8 +253,8 @@ published post, still add a `redirects.json` entry by hand.
    place). Remaining: connect the repo in the Netlify UI, verify on the
    `*.netlify.app` URL, then add `antonio.m6i.it` as custom domain and
    move the DNS record off the legacy WordPress.
-2. **Decide About fate.** Delete `src/content/pages/about.md` + add a
-   redirect `/about/ → /`, or leave as-is. Currently orphaned.
+2. **About — done.** `about.md` + `src/pages/about.astro` deleted,
+   `/about/ → /` redirect added to `redirects.json`.
 3. **Dead 2007 images.** Three references in `paz.md`,
    `blogday-2007.md`, and one other. Options: Wayback Machine recovery
    (manual), strip them, or accept.

@@ -27,15 +27,8 @@ export default defineAstroPaperConfig({
     },
     search: "pagefind",
   },
-  socials: [
-    { name: "mail",      url: "mailto:antoniomolinari@me.com" },
-    { name: "github",    url: "https://github.com/magnum" },
-    { name: "linkedin",  url: "https://linkedin.com/in/magnum" },
-    { name: "instagram", url: "https://instagram.com/amolinari" },
-    { name: "unsplash",  url: "https://unsplash.com/it/@amolinari" },
-    { name: "dribbble",  url: "https://dribbble.com/antoniomolinari" },
-    { name: "substack",  url: "https://antoniomolinari.substack.com/" },
-  ],
+  // NOTE: socials are managed in src/data/socials.json (CMS-editable),
+  // not here. See src/config.ts.
   shareLinks: [
     { name: "x",        url: "https://x.com/intent/post?url=" },
     { name: "linkedin", url: "https://www.linkedin.com/sharing/share-offsite/?url=" },

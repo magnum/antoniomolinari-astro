@@ -34,6 +34,7 @@ export default defineAstroPaperConfig({
     { name: "instagram", url: "https://instagram.com/amolinari" },
     { name: "unsplash",  url: "https://unsplash.com/it/@amolinari" },
     { name: "dribbble",  url: "https://dribbble.com/antoniomolinari" },
+    { name: "substack",  url: "https://antoniomolinari.substack.com/" },
   ],
   shareLinks: [
     { name: "x",        url: "https://x.com/intent/post?url=" },

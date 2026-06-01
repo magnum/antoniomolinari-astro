@@ -1,0 +1,8 @@
+[build]
+  command = "pnpm build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22.12.0"
+  # Astro build is static; _redirects is emitted into dist/ by the build script
+  # (scripts/generate-redirects.mjs) and picked up automatically by Netlify.

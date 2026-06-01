@@ -1,0 +1,86 @@
+backend:
+  name: github
+  repo: magnum/antoniomolinari-astro
+  branch: main
+  # OAuth is brokered by Netlify (Site configuration → Access control → OAuth).
+  # No base_url needed: Decap defaults to Netlify's OAuth endpoint.
+
+# Open a PR per change instead of committing straight to main.
+# Set to "simple" to commit directly to `branch` above.
+publish_mode: editorial_workflow
+
+# Uploaded media lives in public/ and is served from the site root.
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+locale: "en"
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    label_singular: "Post"
+    folder: "src/content/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    identifier_field: "title"
+    summary: "{{title}} — {{pubDatetime}}"
+    sortable_fields: ["pubDatetime", "title"]
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - {
+          name: "pubDatetime",
+          label: "Published",
+          widget: "datetime",
+          date_format: "YYYY-MM-DD",
+          time_format: "HH:mm",
+          picker_utc: true,
+          default: "{{now}}",
+        }
+      - {
+          name: "modDatetime",
+          label: "Last modified",
+          widget: "datetime",
+          required: false,
+          picker_utc: true,
+          date_format: "YYYY-MM-DD",
+          time_format: "HH:mm",
+        }
+      - { name: "description", label: "Description", widget: "text", hint: "One sentence, used in lists and meta tags." }
+      - {
+          name: "tags",
+          label: "Tags",
+          widget: "list",
+          default: ["others"],
+        }
+      - { name: "draft", label: "Draft", widget: "boolean", required: false, default: false }
+      - { name: "featured", label: "Featured", widget: "boolean", required: false, default: false }
+      - { name: "ogImage", label: "OG image", widget: "image", required: false, hint: "Optional social-share image." }
+      - { name: "canonicalURL", label: "Canonical URL", widget: "string", required: false }
+      - {
+          name: "crosspostedToSubstack",
+          label: "Cross-posted to Substack",
+          widget: "boolean",
+          required: false,
+          default: false,
+        }
+      - { name: "substackUrl", label: "Substack URL", widget: "string", required: false }
+      - { name: "author", label: "Author", widget: "string", required: false, default: "Antonio Molinari" }
+      - { name: "body", label: "Body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    label_singular: "Page"
+    folder: "src/content/pages"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    identifier_field: "title"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "description", label: "Description", widget: "text", required: false }
+      - { name: "ogImage", label: "OG image", widget: "image", required: false }
+      - { name: "canonicalURL", label: "Canonical URL", widget: "string", required: false }
+      - { name: "body", label: "Body", widget: "markdown" }

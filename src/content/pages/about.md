@@ -31,6 +31,12 @@ Sòl Melià, Tim, Twinings, Unicef, Unicredit, Vodafone and others.
 
 For an updated portfolio, please visit the studio website at [incode.it](http://www.incode.it), or ask :-)
 
+## GitHub Activity
+
+[![Antonio Molinari's GitHub contributions over the last year](https://ghchart.rshah.org/01e0b8/magnum)](https://github.com/magnum)
+
+[Follow me on GitHub →](https://github.com/magnum)
+
 ## Skills
 
 Ruby/Rails\

@@ -133,7 +133,17 @@ These were explicit user calls. Don't reverse without asking.
   `t.nav.about`. (Earlier this was briefly removed + redirected; that
   redirect was deleted again — do NOT re-add `/about/ → /`.) The Skills
   on this page are intentionally plain lines (markdown hard breaks `\`),
-  NOT a bulleted `- ` list — don't "fix" them into a list.
+  NOT a bulleted `- ` list — don't "fix" them into a list. Just before
+  Skills there's a **GitHub Activity** block: a contributions graph
+  image from the third-party service `ghchart.rshah.org/01e0b8/magnum`
+  (accent-coloured) linked to the GH profile, plus a "Follow me on
+  GitHub →" link. It's plain markdown (CMS-editable). NB: depends on an
+  external image host — if it ever breaks, swap the URL or move to a
+  build-time/self-hosted calendar.
+- **Footer** shows a single repo link — `Steal this post ➜ CC BY 4.0 ·
+  Code MIT` → the GitHub repo — instead of a copyright line. The old
+  `t.footer.copyright` / `t.footer.allRightsReserved` strings are now
+  unused (left in `en.ts`).
 - **Home structure (fixed)**: rounded avatar → headline heading +
   RSS icon → bio (markdown) → social links → "Recent Articles" card
   list → "All Articles" button. No Skills section (moved to About), no

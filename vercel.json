@@ -1,11 +1,6 @@
 {
   "redirects": [
     {
-      "source": "/about",
-      "destination": "",
-      "permanent": true
-    },
-    {
       "source": "/2007/08/31/blogday-2007",
       "destination": "/posts/blogday-2007",
       "permanent": true

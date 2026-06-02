@@ -127,25 +127,27 @@ These were explicit user calls. Don't reverse without asking.
   `src/styles/global.css`. No webfonts loaded for body text.
 - **Accent `#01E0B8`** in both light and dark themes
   (`src/styles/theme.css`). Accent-foreground `#00261F`.
-- **No About page.** The homepage IS the about. `about.md` and its
-  dedicated route `src/pages/about.astro` were deleted; `/about/` now
-  301-redirects to `/` (entry in `redirects.json`). The unused
-  `pages` content collection still exists in `content.config.ts` but
-  has no entries and no route — harmless, left for future use.
+- **About page IS in nav.** `src/content/pages/about.md` (long EN bio +
+  client list + portfolio + Skills) rendered by `src/pages/about.astro`
+  at `/about/`, linked as the first nav item in `Header.astro` via
+  `t.nav.about`. (Earlier this was briefly removed + redirected; that
+  redirect was deleted again — do NOT re-add `/about/ → /`.) The Skills
+  on this page are intentionally plain lines (markdown hard breaks `\`),
+  NOT a bulleted `- ` list — don't "fix" them into a list.
 - **Home structure (fixed)**: rounded avatar → headline heading +
-  RSS icon → bio (markdown) → social links → Skills list (one per
-  line) → "Recent Articles" card list → "All Articles" button. No
-  archive section, no featured posts. The heading, bio, and skills are
-  the **Headline block**, editable from the CMS — see "Content
-  management". The hero bio markdown is styled by `.hero-bio` in
-  `global.css` (accent dashed-underline links) to match the original
-  hand-written hero; external links there open in the same tab (the old
-  hardcoded `target="_blank"` was dropped when it became markdown).
+  RSS icon → bio (markdown) → social links → "Recent Articles" card
+  list → "All Articles" button. No Skills section (moved to About), no
+  archive section, no featured posts. The heading + bio are the
+  **Headline block**, editable from the CMS — see "Content management".
+  The hero bio (short IT intro) markdown is styled by `.hero-bio` in
+  `global.css` (accent dashed-underline links); single newlines are
+  hard breaks (`\`).
 - **Socials are a shared component fed by a data file.**
   `Socials.astro` renders `config.socials`, which `src/config.ts` now
   loads from `src/data/socials.json` (CMS-editable), NOT from
   `astro-paper.config.ts`. The same component is reused in the homepage
-  hero and the footer.
+  hero and the footer, and all links open in a new tab
+  (`target="_blank"`, set in `Socials.astro`).
 - **Single source of truth for cross-posts.** A Substack-mirrored
   article lives only in `posts/` as a regular post with the boolean
   flag + URL.
@@ -160,10 +162,12 @@ These were explicit user calls. Don't reverse without asking.
 | `src/styles/theme.css` | Accent colour, light/dark CSS variables |
 | `src/styles/global.css` | `--font-sans` system stack, base layer |
 | `src/i18n/lang/en.ts` | "Articles" / "Recent Articles" / "Archive" labels |
-| `src/pages/index.astro` | Hero: avatar + CMS Headline (heading/bio/skills) + socials + recent |
-| `src/content/site/headline.md` | Headline block: heading, skills, bio body (CMS-editable) |
+| `src/pages/index.astro` | Hero: avatar + CMS Headline (heading + bio) + socials + recent |
+| `src/pages/about.astro` | `/about/` route, renders the `about` page entry |
+| `src/content/site/headline.md` | Headline block: heading + bio body (CMS-editable) |
+| `src/content/pages/about.md` | About page content (bio, clients, Skills) |
 | `src/data/socials.json` | Social links list (CMS-editable, read by `src/config.ts`) |
-| `src/components/Header.astro` | Nav (no About link), theme toggle |
+| `src/components/Header.astro` | Nav (About is first item), theme toggle |
 | `src/components/Socials.astro` | Falls back to `globe.svg` if named icon missing |
 | `src/components/Card.astro` | No Substack badge, no `transition:name` |
 | `src/layouts/Layout.astro` | `ClientRouter` removed |
@@ -171,14 +175,14 @@ These were explicit user calls. Don't reverse without asking.
 | `src/content.config.ts` | Content collection schemas |
 | `src/content/posts/` | All 190 imported posts, flat, slug = filename |
 | `src/assets/images/avatar.png` | Avatar (1500×1500, downscaled by sharp) |
-| `src/assets/icons/socials/` | `mail`, `github`, `linkedin`, `instagram`, `dribbble`, `substack`, `globe` (+ unused `facebook`/`pinterest`/`telegram`/`whatsapp`/`x`). NB: `unsplash.svg` was deleted — the `unsplash` social entry falls back to `globe` |
+| `src/assets/icons/socials/` | `mail`, `github`, `linkedin`, `instagram`, `x`, `dribbble`, `substack`, `globe` (+ unused `facebook`/`pinterest`/`telegram`/`whatsapp`). NB: `unsplash.svg` was deleted — the `unsplash` social entry falls back to `globe` |
 | `public/admin/index.html` | Decap CMS admin shell (CDN-loaded) |
 | `public/admin/config.yml` | Decap collections, GitHub backend, media |
 | `netlify.toml` | Netlify build settings (command, publish, Node) |
 | `scripts/import-wp.mjs` | WP-XML → markdown transform |
 | `scripts/clean-shortcodes.mjs` | Strip `[youtube]`, `[audio:]`, `[gallery]` |
 | `scripts/generate-redirects.mjs` | Emit `dist/_redirects` + `vercel.json` |
-| `scripts/redirects.json` | 191 entries: `/YYYY/MM/DD/slug/` → `/posts/slug/` + `/about/` → `/` (committed) |
+| `scripts/redirects.json` | 190 entries `/YYYY/MM/DD/slug/` → `/posts/slug/` (committed) |
 | `import/wp-export.xml` | The WP export — source of truth (committed) |
 
 ## Gotchas
@@ -226,9 +230,10 @@ server). Admin lives at `/admin/` (two static files in `public/admin/`):
 - `config.yml` — GitHub backend (`magnum/antoniomolinari-astro`, branch
   `main`). Collections:
   - **Posts** — `src/content/posts/`, fields mirror the content schema.
+  - **Pages** — `src/content/pages/` (currently just `about.md`).
   - **Site blocks** (singleton files):
-    - *Homepage headline* → `src/content/site/headline.md` (heading,
-      bio markdown, skills list).
+    - *Homepage headline* → `src/content/site/headline.md` (heading +
+      bio markdown).
     - *Social links* → `src/data/socials.json` (name/url/linkTitle
       list; `name` must match an SVG in `src/assets/icons/socials/`).
   Uploaded media → `public/uploads/`, served from `/uploads/`.
@@ -254,8 +259,9 @@ still add a `redirects.json` entry by hand.
    place). Remaining: connect the repo in the Netlify UI, verify on the
    `*.netlify.app` URL, then add `antonio.m6i.it` as custom domain and
    move the DNS record off the legacy WordPress.
-2. **About — done.** `about.md` + `src/pages/about.astro` deleted,
-   `/about/ → /` redirect added to `redirects.json`.
+2. **About — done.** `about.md` + `src/pages/about.astro` live at
+   `/about/`, linked in nav. (No `/about/` redirect — the page owns
+   that URL.)
 3. **Dead 2007 images.** Three references in `paz.md`,
    `blogday-2007.md`, and one other. Options: Wayback Machine recovery
    (manual), strip them, or accept.

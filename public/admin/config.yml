@@ -69,6 +69,22 @@ collections:
       - { name: "author", label: "Author", widget: "string", required: false, default: "Antonio Molinari" }
       - { name: "body", label: "Body", widget: "markdown" }
 
+  - name: "pages"
+    label: "Pages"
+    label_singular: "Page"
+    folder: "src/content/pages"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    identifier_field: "title"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "description", label: "Description", widget: "text", required: false }
+      - { name: "ogImage", label: "OG image", widget: "image", required: false }
+      - { name: "canonicalURL", label: "Canonical URL", widget: "string", required: false }
+      - { name: "body", label: "Body", widget: "markdown" }
+
   # Singleton "blocks" that aren't standalone pages.
   - name: "site"
     label: "Site blocks"
@@ -84,12 +100,6 @@ collections:
               label: "Bio",
               widget: "markdown",
               hint: "Intro paragraphs shown under the heading.",
-            }
-          - {
-              name: "skills",
-              label: "Skills",
-              widget: "list",
-              hint: "One skill per item.",
             }
       - name: "socials"
         label: "Social links"

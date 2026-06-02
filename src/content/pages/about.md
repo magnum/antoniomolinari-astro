@@ -29,7 +29,7 @@ Nespresso, Nestlè, Negroni, Paypal, Perugina, Philadelfia, Piaggio, Pioneer,
 Pirelli, Prosciutto di Parma, Rcs, Saint-Gobain, Sanpellegrino, Santander, Sky,
 Sòl Melià, Tim, Twinings, Unicef, Unicredit, Vodafone and others.
 
-For a portfolio, please visit the company website at [incode.it](http://www.incode.it), or ask :-)
+For an updated portfolio, please visit the studio website at [incode.it](http://www.incode.it), or ask :-)
 
 ## Skills
 

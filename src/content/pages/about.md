@@ -1,8 +1,9 @@
 ---
 title: About
-description: Antonio Molinari — developer and designer near Cremona, Italy. Founder of Incode, CTO and mentor, teaching web design at LABA Brescia since 2013.
+description: Antonio Molinari — developer and designer near Cremona, Italy.
+  Founder of Incode, CTO and mentor, teaching web design at LABA Brescia since
+  2013.
 ---
-
 Hi, I'm **Antonio Molinari** — Magnum to friends. Developer and designer, I
 live near Cremona in northern Italy with my wife and two kids. I've been
 working on the web since the late 90s, so I've seen quite a few things come and
@@ -18,6 +19,8 @@ background. Passionate about electronic music, live concerts, and anything with
 a chip, a network connection, or something worth taking apart to understand how
 it works.
 
+[Resume available here](https://docs.google.com/document/d/1zAjYVGjGfPNKLzoo5UkYiG5BqNI_of1aLyQGxmn9Gvw)
+
 In the past 20 years I collaborated with various agencies and worked for their
 clients or directly with Axa, Bmw, Bnp Paribas, Cantine Ferrari, Cardif, Deutsch
 Bank, Disney, Edison, Enel, FIA, Fastweb, Fiat/FCA, Gucci, Il Sole 24 ore, ING,
@@ -26,8 +29,7 @@ Nespresso, Nestlè, Negroni, Paypal, Perugina, Philadelfia, Piaggio, Pioneer,
 Pirelli, Prosciutto di Parma, Rcs, Saint-Gobain, Sanpellegrino, Santander, Sky,
 Sòl Melià, Tim, Twinings, Unicef, Unicredit, Vodafone and others.
 
-For a portfolio, please visit the company website at
-[www.incode.it](http://www.incode.it), or ask :-)
+For a portfolio, please visit the company website at [incode.it](http://www.incode.it), or ask :-)
 
 ## Skills
 

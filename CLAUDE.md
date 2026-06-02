@@ -123,8 +123,26 @@ These were explicit user calls. Don't reverse without asking.
   `transition-all` removed from header skip-link and theme toggle.
   `transition duration-500` removed from `BackToTopButton`. Goal:
   instant, no-fade UI. Do not re-add View Transitions.
-- **Sans-serif system stack** — see `--font-sans` in
-  `src/styles/global.css`. No webfonts loaded for body text.
+- **Body font = theme default `Google Sans Code`** (a monospace webfont),
+  self-hosted by `astro.config.ts` `fonts` and applied via the `font-app`
+  utility (`--font-app: var(--font-google-sans-code)` in `theme.css`).
+  This is the theme's original styling — it was briefly swapped for a
+  system-mono stack, then reverted. NB: a pure system-mono stack with
+  `ui-monospace`/`SFMono-Regular` at the front breaks `<strong>` bold on
+  Chrome/macOS (SF Mono Regular face, no bold) — another reason to keep
+  the webfont, which has a real 700.
+- **No font flicker AND consistent weights.** Two settings, don't revert:
+  1. `display: "block"` on the font in `astro.config.ts`. Text always
+     renders in Google Sans Code (the browser briefly waits for it). This
+     kills BOTH the old `swap` flicker AND the `optional` "lottery" where
+     some loads showed the real font and others the Courier fallback — the
+     visible symptom was nav links (weight 500 `font-medium`) flipping
+     between medium and regular. Do NOT switch back to `swap`/`optional`.
+  2. `<Font preload={[…400/500/600/700 normal…]}>` in `Layout.astro` —
+     preloads the above-the-fold weights (body 400, nav 500, headings 600,
+     bold 700) so the `block` wait is imperceptible. Filter by
+     `weight`/`style` ONLY: adding a `subset` that doesn't match the
+     generated data silently drops the preload.
 - **Accent `#01E0B8`** in both light and dark themes
   (`src/styles/theme.css`). Accent-foreground `#00261F`.
 - **About page IS in nav.** `src/content/pages/about.md` (long EN bio +

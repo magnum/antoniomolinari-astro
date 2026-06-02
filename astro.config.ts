@@ -59,6 +59,14 @@ export default defineConfig({
       weights: [300, 400, 500, 600, 700],
       styles: ["normal", "italic"],
       formats: ["woff", "ttf"],
+      // "block" renders text in the real font consistently (it briefly
+      // waits for the webfont instead of swapping or falling back). This
+      // avoids BOTH the FOUT swap flicker AND the "optional" lottery where
+      // some loads showed Google Sans Code and others the Courier fallback
+      // (e.g. nav links flipping between medium and regular). The
+      // above-the-fold weights are preloaded in Layout.astro, so the wait
+      // is imperceptible.
+      display: "block",
     },
   ],
   env: {

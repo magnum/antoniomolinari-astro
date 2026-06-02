@@ -3,6 +3,7 @@ import { Font } from "astro:assets";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { resolveDefaultOgImagePath } from "@/utils/resolveDefaultOgImagePath";
 import { getAssetPath } from "@/utils/withBase";
+import GoogleAnalytics from "@/components/GoogleAnalytics.astro";
 import config from "@/config";
 import "@/styles/global.css";
 
@@ -36,6 +37,8 @@ const rssHref = getRelativeLocaleUrl(
   class="overflow-y-scroll scroll-smooth"
 >
   <head>
+    <!-- Google tag (gtag.js) — ID/toggle in src/data/analytics.json -->
+    <GoogleAnalytics />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href={getAssetPath("favicon.svg")} />

@@ -167,6 +167,9 @@ These were explicit user calls. Don't reverse without asking.
 | `src/content/site/headline.md` | Headline block: heading + bio body (CMS-editable) |
 | `src/content/pages/about.md` | About page content (bio, clients, Skills) |
 | `src/data/socials.json` | Social links list (CMS-editable, read by `src/config.ts`) |
+| `src/data/analytics.json` | Google Analytics ID + on/off (CMS-editable) |
+| `src/components/GoogleAnalytics.astro` | gtag.js snippet (prod only), injected in `<head>` |
+| `src/layouts/Layout.astro` | `<head>`; renders `<GoogleAnalytics />` first |
 | `src/components/Header.astro` | Nav (About is first item), theme toggle |
 | `src/components/Socials.astro` | Falls back to `globe.svg` if named icon missing |
 | `src/components/Card.astro` | No Substack badge, no `transition:name` |
@@ -236,6 +239,11 @@ server). Admin lives at `/admin/` (two static files in `public/admin/`):
       bio markdown).
     - *Social links* → `src/data/socials.json` (name/url/linkTitle
       list; `name` must match an SVG in `src/assets/icons/socials/`).
+    - *Google Analytics* → `src/data/analytics.json` (`enabled` +
+      `googleAnalyticsId`). Rendered by `GoogleAnalytics.astro` as the
+      first child of `<head>` in `Layout.astro`. The gtag snippet is
+      emitted only in production builds (deploy + `pnpm preview`), never
+      in `pnpm dev`, and only when `enabled` is true.
   Uploaded media → `public/uploads/`, served from `/uploads/`.
 
 Auth is **GitHub OAuth brokered by Netlify** (Netlify Identity is
@@ -247,11 +255,19 @@ dashboards (not in this repo):
    GitHub provider with those credentials.
 3. Visit `/admin/`, "Login with GitHub".
 
-`publish_mode: simple` → each save commits directly to `main` (no PR /
-review step), and Netlify auto-deploys. Switch to `editorial_workflow`
-in `config.yml` to open a PR per change instead. Note: Decap derives the
-slug (= filename = URL) from the title — when renaming a published post,
-still add a `redirects.json` entry by hand.
+`publish_mode: editorial_workflow` → each entry becomes a `cms/…` branch
++ PR; only clicking **Publish** (merge to `main`) triggers a production
+build. Switch to `simple` for direct commits (a build per save). Note:
+Decap derives the slug (= filename = URL) from the title — when renaming
+a published post, still add a `redirects.json` entry by hand.
+
+**Netlify build-minutes caveat:** editorial_workflow alone is NOT enough
+to avoid per-save builds. Every save pushes to the `cms/…` branch, and
+if Netlify **Deploy Previews** (for PRs) or **Branch deploys** are
+enabled, each push still builds. To build ONLY on merge to `main`:
+Netlify → Site config → Build & deploy → Continuous deployment →
+*Deploy Previews* = "Don't deploy", *Branch deploys* = "None". Then only
+the production branch (`main`) builds.
 
 ## Open items / next steps
 

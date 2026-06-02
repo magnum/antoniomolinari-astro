@@ -5,9 +5,10 @@ backend:
   # OAuth is brokered by Netlify (Site configuration → Access control → OAuth).
   # No base_url needed: Decap defaults to Netlify's OAuth endpoint.
 
-# "simple" = commit directly to `branch` (no PR / review step).
-# Set to "editorial_workflow" to open a PR per change instead.
-publish_mode: simple
+# "editorial_workflow" = each entry is a branch + PR; only merging
+# ("Publish" in Decap) lands on `branch` and triggers a production build.
+# Set to "simple" to commit directly to `branch` (a build per save).
+publish_mode: editorial_workflow
 
 # Uploaded media lives in public/ and is served from the site root.
 media_folder: "public/uploads"
@@ -100,6 +101,23 @@ collections:
               label: "Bio",
               widget: "markdown",
               hint: "Intro paragraphs shown under the heading.",
+            }
+      - name: "analytics"
+        label: "Google Analytics"
+        file: "src/data/analytics.json"
+        fields:
+          - {
+              name: "enabled",
+              label: "Enabled",
+              widget: "boolean",
+              default: true,
+              hint: "Turn tracking on/off (only active in production builds).",
+            }
+          - {
+              name: "googleAnalyticsId",
+              label: "Measurement ID",
+              widget: "string",
+              hint: "e.g. G-XXXXXXXXXX",
             }
       - name: "socials"
         label: "Social links"

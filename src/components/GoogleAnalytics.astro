@@ -1,0 +1,36 @@
+---
+// Google Analytics (gtag.js). The measurement ID and on/off switch are
+// editable from the CMS via src/data/analytics.json. Tracking is emitted
+// only in production builds (deploy + `pnpm preview`), never in `pnpm dev`.
+import analytics from "@/data/analytics.json";
+
+const { enabled, googleAnalyticsId } = analytics as {
+  enabled?: boolean;
+  googleAnalyticsId?: string;
+};
+
+const gaId =
+  enabled && googleAnalyticsId && import.meta.env.PROD
+    ? googleAnalyticsId
+    : null;
+---
+
+{
+  gaId && (
+    <>
+      <script
+        is:inline
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+      />
+      <script is:inline define:vars={{ gaId }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", gaId);
+      </script>
+    </>
+  )
+}

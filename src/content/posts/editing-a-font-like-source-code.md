@@ -8,7 +8,7 @@ tags:
   - others
 draft: false
 featured: false
-crosspostedToSubstack: false
+crosspostedToSubstack: true
 substackUrl: https://antoniomolinari.substack.com/p/editing-a-font-like-source-code
 author: Antonio Molinari
 ---

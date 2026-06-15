@@ -12,7 +12,7 @@ crosspostedToSubstack: false
 substackUrl: https://antoniomolinari.substack.com/p/editing-a-font-like-source-code
 author: Antonio Molinari
 ---
-I was looking at the */about* page of [refactoring.club](refactoring.club) — one of those sites done so well that even the headline makes you want to know which typeface they used. «Why Refactoring exists today», in a very bold sans with the corners ever so slightly softened. Nice. So I asked the most innocent question in the world: what font is that?
+I was looking at the */about* page of [refactoring.club](https://refactoring.club) — one of those sites done so well that even the headline makes you want to know which typeface they used. «Why Refactoring exists today», in a very bold sans with the corners ever so slightly softened. Nice. So I asked the most innocent question in the world: what font is that?
 
 The first answer seemed to close the case quickly: it's called «Refactoring Sans». Custom name, sounds proprietary, their thing, done. Except no.
 

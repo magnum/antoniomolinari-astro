@@ -26,7 +26,7 @@ collections:
     extension: "md"
     format: "yaml-frontmatter"
     identifier_field: "title"
-    summary: "{{title}} — {{pubDatetime}}"
+    summary: "{{title}}"
     sortable_fields: ["pubDatetime", "title"]
     fields:
       - { name: "title", label: "Title", widget: "string" }
@@ -34,6 +34,7 @@ collections:
           name: "pubDatetime",
           label: "Published",
           widget: "datetime",
+          format: "YYYY-MM-DDTHH:mm:ss.SSS[Z]",
           picker_utc: true,
           default: "{{now}}",
         }
@@ -41,6 +42,7 @@ collections:
           name: "modDatetime",
           label: "Last modified",
           widget: "datetime",
+          format: "YYYY-MM-DDTHH:mm:ss.SSS[Z]",
           required: false,
           picker_utc: true,
         }

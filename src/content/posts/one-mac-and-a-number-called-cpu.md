@@ -1,6 +1,6 @@
 ---
 title: One Mac, and a number called %CPU
-pubDatetime: 2026-07-27T21:02
+pubDatetime: 2026-07-27T21:02:00.000Z
 description: For about a week my MacBook Pro had been feeling tired. Not broken
   — tired. The kind of tired where a click on a file in an open panel lands half
   a beat late, where the pointer refuses to turn into a hand over a link, where

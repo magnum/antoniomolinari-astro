@@ -1,6 +1,6 @@
 ---
 title: Editing a Font Like Source Code.
-pubDatetime: 2026-06-15T21:25:00+02:00
+pubDatetime: 2026-06-15T19:25:00.000Z
 description: The headline font I admired turned out to be Inter with the corners
   filed off. Turns out a typeface isn't a closed object — it's source you can
   open.

@@ -14,7 +14,8 @@ tags:
   - ai
 draft: false
 featured: false
-crosspostedToSubstack: false
+crosspostedToSubstack: true
+substackUrl: https://antoniomolinari.substack.com/p/five-integrations-one-sunday-and
 author: Antonio Molinari
 ---
 ## *Or: what I learned about my own tools by building a single host for all of them*

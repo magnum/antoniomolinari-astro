@@ -34,8 +34,6 @@ collections:
           name: "pubDatetime",
           label: "Published",
           widget: "datetime",
-          date_format: "YYYY-MM-DD",
-          time_format: "HH:mm",
           picker_utc: true,
           default: "{{now}}",
         }
@@ -45,8 +43,6 @@ collections:
           widget: "datetime",
           required: false,
           picker_utc: true,
-          date_format: "YYYY-MM-DD",
-          time_format: "HH:mm",
         }
       - { name: "description", label: "Description", widget: "text", hint: "One sentence, used in lists and meta tags." }
       - {

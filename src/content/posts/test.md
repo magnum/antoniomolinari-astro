@@ -6,7 +6,8 @@ tags:
   - others
 draft: false
 featured: false
-crosspostedToSubstack: false
+crosspostedToSubstack: true
+substackUrl: https://antoniomolinari.substack.com/p/teaching-an-agent-to-read-my-mail
 author: Antonio Molinari
 ---
 ## Or: the day my software got a feature request from its only user - and the user is an AI 

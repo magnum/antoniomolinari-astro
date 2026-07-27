@@ -14,7 +14,8 @@ tags:
   - ruby
 draft: false
 featured: false
-crosspostedToSubstack: false
+crosspostedToSubstack: true
+substackUrl: https://antoniomolinari.substack.com/p/one-mac-and-a-number-called-cpu
 author: Antonio Molinari
 ---
 For about a week my MacBook Pro had been feeling *tired*. Not broken — tired. The

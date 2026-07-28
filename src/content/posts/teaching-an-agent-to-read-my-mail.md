@@ -1,10 +1,11 @@
 ---
 title: Teaching an agent to read my mail
-pubDatetime: 2026-07-27T19:54:00.000Z
-description: >-
-  The day my software got a feature request from its only user — and the user is an AI.
+pubDatetime: 2026-07-25T15:00:00.000Z
+description: The day my software got a feature request from its only user — and
+  the user is an AI.
 tags:
-  - others
+  - ai
+  - mcp
 draft: false
 featured: false
 crosspostedToSubstack: true

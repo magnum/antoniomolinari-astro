@@ -7,7 +7,7 @@ export default defineAstroPaperConfig({
     description: "web developer and tech enthusiast",
     author: "Antonio Molinari",
     profile: "https://antonio.m6i.it/",
-    ogImage: "default-og.jpg",
+    ogImage: "og-image1.jpg",
     lang: "en",
     timezone: "Europe/Rome",
     dir: "ltr",

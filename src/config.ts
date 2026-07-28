@@ -12,7 +12,7 @@ import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
 // them through `config.socials` below.
 import socialsData from "@/data/socials.json";
 
-const DEFAULT_OG_IMAGE = "default-og.jpg";
+const DEFAULT_OG_IMAGE = "og-image1.jpg";
 
 const config: ResolvedAstroPaperConfig = {
   site: {

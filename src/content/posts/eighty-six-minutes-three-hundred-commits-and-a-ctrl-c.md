@@ -6,7 +6,8 @@ description: >
 
   Not the commands — the commands I know. It's the flags. It's `find` versus `fd`, it's which of the seven `tar` invocations is the one that actually extracts, it's the exact incantation for "every file over 100 MB modified in the last week, sorted by size". I've been doing this for twenty-odd years and I still open a browser tab for `rsync`.
 tags:
-  - others
+  - ai
+  - cli
 draft: false
 featured: false
 crosspostedToSubstack: true

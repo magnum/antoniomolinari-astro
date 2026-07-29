@@ -21,6 +21,46 @@
       "title": "aicli",
       "url": "https://github.com/magnum/aicli",
       "description": "Natural language to shell commands — chat with OpenAI or Anthropic and run suggested commands in one flow."
+    },
+    {
+      "title": "railsapp",
+      "url": "https://github.com/magnum/railsapp",
+      "description": "Opinionated Rails starter for Kamal deploys: PostgreSQL, Solid Queue/Cache/Cable, Google OAuth, and a remote DB pull task."
+    },
+    {
+      "title": "buildapage",
+      "url": "https://github.com/magnum/buildapage",
+      "description": "Vue 3 + Vite template that loads tabular data from public Google Sheets, with a standalone gviz loader bundle for any page."
+    },
+    {
+      "title": "migrate-notes",
+      "url": "https://github.com/magnum/migrate-notes",
+      "description": "Python tools to migrate notes between Notion and Markdown folders — idempotent, resumable, both directions."
+    },
+    {
+      "title": "localwebdev",
+      "url": "https://github.com/magnum/localwebdev",
+      "description": "Dockerized local web dev environment with Apache, SSL, PHP, and MySQL — point DOCROOT at your projects folder."
+    },
+    {
+      "title": "filedepot",
+      "url": "https://github.com/magnum/filedepot",
+      "description": "Ruby CLI to push and pull versioned files between people over SSH, keyed by stable handles."
+    },
+    {
+      "title": "auto-invoices",
+      "url": "https://github.com/magnum/auto-invoices",
+      "description": "Ruby workflow that uses GPT-4o to extract credit-card and receipt PDFs, fuzzy-match suppliers, and prep Fatture in Cloud imports."
+    },
+    {
+      "title": "elastic-stack",
+      "url": "https://github.com/magnum/elastic-stack",
+      "description": "Dockerized ELK stack — ingest project logs via Filebeat and Logstash, search them in Kibana."
+    },
+    {
+      "title": "solarplant-zonergy",
+      "url": "https://github.com/magnum/solarplant-zonergy",
+      "description": "Netlify API bridge to sync a Zonergy inverter with Home Assistant — reverse-engineered from the vendor web app, including auth and captcha handling."
     }
   ]
 }

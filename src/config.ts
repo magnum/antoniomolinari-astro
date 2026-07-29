@@ -11,6 +11,8 @@ import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
 // not in astro-paper.config.ts. Both Socials.astro and the homepage read
 // them through `config.socials` below.
 import socialsData from "@/data/socials.json";
+import projectsData from "@/data/projects.json";
+import type { ProjectsData } from "@/types/projects";
 
 const DEFAULT_OG_IMAGE = "og-image1.jpg";
 
@@ -39,6 +41,7 @@ const config: ResolvedAstroPaperConfig = {
     search: userConfig.features?.search ?? "pagefind",
   },
   socials: (socialsData.socials ?? []) as ResolvedAstroPaperConfig["socials"],
+  projects: projectsData as ProjectsData,
   shareLinks: userConfig.shareLinks ?? [],
 };
 

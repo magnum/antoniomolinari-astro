@@ -32,6 +32,7 @@ export default {
     featured: "Featured",
     recentPosts: "Recent Articles",
     allPosts: "All Articles",
+    allProjects: "All Projects",
   },
   footer: {
     copyright: "Copyright",
@@ -52,6 +53,9 @@ export default {
 
     searchTitle: "Search",
     searchDesc: "Search any article ...",
+
+    projectsTitle: "Projects",
+    projectsDesc: "Personal and work projects I'm investing time in.",
   },
   a11y: {
     skipToContent: "Skip to content",

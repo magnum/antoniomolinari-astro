@@ -141,3 +141,28 @@ collections:
                   required: false,
                   hint: "Optional accessible label; auto-generated if empty.",
                 }
+      - name: "projects"
+        label: "Projects"
+        file: "src/data/projects.json"
+        fields:
+          - { name: "title", label: "Section title", widget: "string" }
+          - {
+              name: "description",
+              label: "Intro",
+              widget: "string",
+              hint: "Single-line paragraph shown above the project list.",
+            }
+          - name: "projects"
+            label: "Projects"
+            label_singular: "Project"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "url", label: "GitHub URL", widget: "string" }
+              - {
+                  name: "description",
+                  label: "Description",
+                  widget: "text",
+                  hint: "One or two sentences.",
+                }

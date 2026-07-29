@@ -30,6 +30,7 @@ export interface UIStrings {
     featured: string;
     recentPosts: string;
     allPosts: string;
+    allProjects: string;
   };
   footer: {
     copyright: string;
@@ -50,6 +51,9 @@ export interface UIStrings {
 
     searchTitle: string;
     searchDesc: string;
+
+    projectsTitle: string;
+    projectsDesc: string;
   };
   a11y: {
     skipToContent: string;

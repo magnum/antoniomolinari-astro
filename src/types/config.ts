@@ -1,3 +1,5 @@
+import type { ProjectsData } from "./projects";
+
 interface SiteConfig {
   /** Deployed URL of the site, e.g. "https://example.com" */
   url: string;
@@ -122,6 +124,7 @@ export interface ResolvedAstroPaperConfig {
   posts: Required<PostsConfig>;
   features: Required<FeaturesConfig>;
   socials: SocialLink[];
+  projects: ProjectsData;
   shareLinks: ShareLink[];
 }
 

@@ -1,0 +1,26 @@
+{
+  "title": "Projects",
+  "description": "This is a non-exhaustive list of personal and work projects (mostly the former) I'm investing my time in with unwavering enthusiasm. Thanks to everyone who makes that possible :-)",
+  "projects": [
+    {
+      "title": "flycal-cli",
+      "url": "https://github.com/magnum/flycal-cli",
+      "description": "Ruby CLI to search Google Calendar events and find free slots — with an MCP server for agents."
+    },
+    {
+      "title": "madcp",
+      "url": "https://github.com/magnum/madcp",
+      "description": "Self-hosted Ruby host for multiple MCP integrations: HEY, Basecamp, Fatture in Cloud, Google Workspace, and more."
+    },
+    {
+      "title": "mcpme",
+      "url": "https://github.com/magnum/mcpme",
+      "description": "Ruby MCP server with OAuth 2.1 that exposes a run_shell tool on the machine where it runs."
+    },
+    {
+      "title": "aicli",
+      "url": "https://github.com/magnum/aicli",
+      "description": "Natural language to shell commands — chat with OpenAI or Anthropic and run suggested commands in one flow."
+    }
+  ]
+}

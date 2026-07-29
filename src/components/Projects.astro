@@ -1,0 +1,55 @@
+---
+import type { Project } from "@/types/projects";
+
+type Props = {
+  title?: string;
+  description?: string;
+  projects: Project[];
+  heading?: "h2" | "h3";
+  showHeader?: boolean;
+};
+
+const {
+  title,
+  description,
+  projects,
+  heading: Heading = "h2",
+  showHeader = Boolean(title),
+} = Astro.props;
+---
+
+<section class="projects">
+  {
+    showHeader && title && (
+      <Heading class="text-2xl font-semibold tracking-wide">{title}</Heading>
+    )
+  }
+  {
+    showHeader && description && (
+      <p class="text-foreground/80 mt-3">{description}</p>
+    )
+  }
+  {
+    projects.length > 0 && (
+      <ul class="mt-6">
+        {projects.map(project => (
+          <li class="my-6">
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class:list={[
+                "text-accent inline-block text-lg font-medium",
+                "decoration-dashed underline-offset-4 hover:underline",
+                "focus-visible:no-underline focus-visible:underline-offset-0",
+              ]}
+            >
+              {project.title}
+            </a>
+            <p class="mt-1">{project.description}</p>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</section>

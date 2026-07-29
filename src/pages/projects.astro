@@ -1,0 +1,30 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Main from "@/components/Main.astro";
+import Footer from "@/components/Footer.astro";
+import Projects from "@/components/Projects.astro";
+import { useTranslations } from "@/i18n";
+import config from "@/config";
+
+const locale = Astro.currentLocale ?? config.site.lang;
+const t = useTranslations(locale);
+const { projects: projectsData } = config;
+---
+
+<Layout
+  title={`${t.pages.projectsTitle} | ${config.site.title}`}
+  description={t.pages.projectsDesc}
+>
+  <Header />
+
+  <Breadcrumb />
+
+  <Main pageTitle={t.pages.projectsTitle} class="app-prose">
+    <p class="text-foreground/80">{projectsData.description}</p>
+    <Projects projects={projectsData.projects} showHeader={false} />
+  </Main>
+
+  <Footer />
+</Layout>

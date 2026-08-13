@@ -3,6 +3,11 @@
   "description": "This is a non-exhaustive list of personal and work projects (mostly the former) I'm investing my time in with unwavering enthusiasm. Thanks to everyone who makes that possible :-)",
   "projects": [
     {
+      "title": "higgins",
+      "url": "https://github.com/magnum/higgins",
+      "description": "Higgins is a macOS menubar app that improves selected text with AI. Select text in any app, press a shortcut, pick a prompt, and the improved version is pasted back in place."
+    },
+    {
       "title": "flycal-cli",
       "url": "https://github.com/magnum/flycal-cli",
       "description": "Ruby CLI to search Google Calendar events and find free slots — with an MCP server for agents."

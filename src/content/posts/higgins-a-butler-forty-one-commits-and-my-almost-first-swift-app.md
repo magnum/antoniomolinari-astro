@@ -23,7 +23,7 @@ I had forked it with the classic "I'll get to it over the weekend" intention. Th
 
 ## The name, first of all
 
-Anyone who knows me knows I've been **Magnum** online (and offline) forever. So when the app started becoming mine, the name had been decided by forty years of television: Magnum's butler is called **Higgins**. There was really no other possible choice. The fork evolved into Higgins, and tonight it moved out: new repository, clean history, github.com/magnum/higgins.
+Anyone who knows me knows I've been **Magnum** online (and offline) forever. So when the app started becoming mine, the name had been decided by forty years of television: Magnum's butler is called **Higgins**. There was really no other possible choice. The fork evolved into Higgins, and tonight it moved out: new repository, clean history, [github.com/magnum/higgins](https://github.com/magnum/higgins).
 
 ## What changed along the way
 

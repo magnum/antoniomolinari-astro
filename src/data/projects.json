@@ -13,9 +13,9 @@
       "description": "Ruby CLI to search Google Calendar events and find free slots — with an MCP server for agents."
     },
     {
-      "title": "madcp",
-      "url": "https://github.com/magnum/madcp",
-      "description": "Self-hosted Ruby host for multiple MCP integrations: HEY, Basecamp, Fatture in Cloud, Google Workspace, and more."
+      "title": "emcp",
+      "url": "https://github.com/magnum/emcp",
+      "description": "Self-hosted Ruby host for multiple MCP integrations: HEY, Basecamp, Fatture in Cloud, Google Workspace, Toggl, Twitter, Bluesky, Teslamate and more."
     },
     {
       "title": "mcpme",

@@ -1,5 +1,5 @@
 ---
-title: Five MPC integrations, one Sunday, and a switch that said no
+title: Five MCP integrations, one Sunday, and a switch that said no
 pubDatetime: 2026-07-27T23:21:00.000Z
 description: >
   The tools I use every day have excellent command-line interfaces. HEY has one.
@@ -28,7 +28,7 @@ Because a CLI runs on my machine, and the model I spend most of my day talking t
 
 That works for one lookup. It collapses instantly for anything real.
 
-So one Sunday in July I sat down to fix it, and by midnight there was a thing called **MadCP**.
+So one Sunday in July I sat down to fix it, and by midnight there was a thing called **eMCP**.
 
 ## The obvious wrong answer
 
@@ -45,8 +45,8 @@ So the shape changed before I wrote any code. **One host, many integrations.**
 ## The shape
 
 ```text
-madcp/
-├── lib/madcp/            # the host: HTTP, OAuth, registry, DSL, logging
+emcp/
+├── lib/emcp/            # the host: HTTP, OAuth, registry, DSL, logging
 ├── servers/<id>/         # one integration per folder
 │   ├── server.rb         #   registers itself
 │   └── README.md
@@ -71,11 +71,11 @@ Five integrations went in: HEY and Basecamp wrapping 37signals' CLIs, Google Wor
 
 Here's the part I actually want to write about.
 
-Every tool in MadCP that mutates something is marked `write: true`. Those tools stay **disabled** until you opt in, per integration, with an environment variable. Read is free. Write requires a deliberate act.
+Every tool in eMCP that mutates something is marked `write: true`. Those tools stay **disabled** until you opt in, per integration, with an environment variable. Read is free. Write requires a deliberate act.
 
 I put that in early, felt vaguely good about myself, and moved on.
 
-Two days later I was using MadCP in anger. I'd asked Claude to go into a company spreadsheet — our accounting workbook, the one with cash flow and partner drawings in it — and colour some rows red. It read the sheet, found the twenty-two matching rows, built the batch update, fired it, and got back:
+Two days later I was using eMCP in anger. I'd asked Claude to go into a company spreadsheet — our accounting workbook, the one with cash flow and partner drawings in it — and colour some rows red. It read the sheet, found the twenty-two matching rows, built the batch update, fired it, and got back:
 
 ```
 ERROR: write method disabled. Set GOOGLEWORKSPACE_ALLOW_WRITE=true.
@@ -103,7 +103,7 @@ That cross-referencing is the whole point, and it's the thing no individual tool
 
 None of that is a clever question. It's just arithmetic across four systems that don't talk to each other. Which is precisely the work that never gets done, because doing it by hand means four logins, four exports, and an afternoon — and by the time you've got the numbers, you've lost the thread of what you were asking.
 
-MadCP didn't make the analysis smart. It made it *cheap*, and depth is what you buy with cheapness.
+eMCP didn't make the analysis smart. It made it *cheap*, and depth is what you buy with cheapness.
 
 ## If you're going to build one
 
@@ -117,7 +117,7 @@ Some things I'd tell myself at lunchtime on Sunday:
 
 **Separate read from write on day one.** Not because you don't trust the model — because you will, at some point, be tired, moving fast, and one confirmation away from a nineteen-request batch update against something you care about.
 
-The code is at **[github.com/magnum/madcp](https://github.com/magnum/madcp)** — Ruby, Docker, MIT, five integrations, roughly 130 tools. There's a sibling project too, [mcpme](https://github.com/magnum/mcpme), which does the other half of the same problem: one tool, `run_shell`, for when what I need isn't an integration but the machine itself.
+The code is at **[github.com/magnum/emcp](https://github.com/magnum/emdcp)** — Ruby, Docker, MIT, five integrations, roughly 130 tools. There's a sibling project too, [mcpme](https://github.com/magnum/mcpme), which does the other half of the same problem: one tool, `run_shell`, for when what I need isn't an integration but the machine itself.
 
 Between them, the gap I described at the top has closed. The CLIs I liked but couldn't reach are now just… there, in the conversation, on my phone, in a meeting.
 
